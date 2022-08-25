@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          rel="stylesheet"
+          id="bootstrap-css"
+        />
+        <style>
+          *{
+            margin: 5px;
+            padding: 0;
+          }
+          .register .nav-tabs .nav-link:hover {
+            border: none;
+          }
+          .text-align {
+            margin-top: -3%;
+            margin-bottom: -9%;
+            padding: 10%;
+            margin-left: 30%;
+          }
+          .form-new {
+            margin-right: 22%;
+            margin-left: 20%;
+          }
+          .register-heading {
+            margin-left: 21%;
+            margin-bottom: 10%;
+            /* margin: 5%; */
+            color: #e9ecef;
+            text-decoration: underline;
+          }
+          @media screen and (min-width: 600px) and (max-width: 1000px){
+            .register-heading {
+              margin-left: 5%;
+            }
+          }
+          @media screen and (max-width: 599px) {
+            .register-heading {
+              margin-left: -10%;
+            }
+          }
+          .register {
+            background: -webkit-linear-gradient(left, #055a4f, #00c6ff);
+            margin-top: 3%;
+            padding: 3%;
+            border-radius: 2.5rem;
+          }
+          .btnSubmit {
+            width: 50%;
+            border-radius: 1rem;
+            padding: 1.5%;
+            color: #fff;
+            color: rgb(246, 246, 252);
+            background-color: #03612e;
+            border: none;
+            cursor: pointer;
+            margin-right: 6%;
+            margin-top: 16%;
+            box-shadow: 1px 1px 10px white;
+          }
+          .btnSubmit:hover {
+            box-shadow: none;
+          }
+
+          .img_span{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            bottom: 50px;
+            right: 100px;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            cursor: pointer;
+            /* box-shadow: 2px 2px 0px #999; */
+          }
+
+        </style>
+      </head>
+      <body>
+        <div class="container register">
+          <div class="row">
+            <div class="col-md-12">
+              <div
+                class="tab-pane fade show active text-align form-new"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+              >
+                <h3 class="register-heading text-nowrap">PURCHASE FORM</h3>
+                <div class="row register-form">
+                  <div class="col-md-12">
+                    <form autocomplete="off">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          name="Name"
+                          id="name"
+                          class="form-control"
+                          placeholder="Enter Your Name.."
+                          value=""
+                          required
+                        />
+                      </div>
+
+                      <div class="form-group">
+                        <select class="form-control" id="items1">
+                          <option>Select</option>
+                          <option>AIREL</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <select class="form-control" id="items2" required>
+                          <option>Select Products</option>
+                          <option>AIREL MATIC</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <select class="form-control" id="items3" required>
+                          <option>Select Quantity</option>
+                          <option>3 PCS</option>
+                          <option>6 PCS</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <input
+                          type="submit"
+                          name="submit"
+                          onclick="gotowhatsapp()"
+                          class="btnSubmit btn-block"
+                          value="Submit"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <span onclick="gotowhatsapp()" class=img_span>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1200px-WhatsApp.svg.png"
+            alt=""
+            height="60px"
+            width="60px"
+          />
+        </span>
+
+        <script>
+          function gotowhatsapp() {
+            var name = document.getElementById("name").value;
+            var items1 = document.getElementById("items1").value;
+            var items2 = document.getElementById("items2").value;
+            var items3 = document.getElementById("items3").value;
+
+            var url =
+              "https://wa.me/?text=" +
+              "Name: " +
+              name +
+              "%0a" +
+              " items1: " +
+              items1 +
+              "%0a" +
+              " items2: " +
+              items2 +
+              "%0a" +
+              " items3: " +
+              items3;
+
+            window.open(url, "_blank").focus();
+          }
+        </script>
+      </body>
+    </html>
